@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>សុំចុះឈ្មោះ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans Khmer', 'Khmer OS', sans-serif;
+    }
+
+    body {
+      background-color: #4a6cf7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 15px;
+      padding: 30px;
+      display: flex;
+      width: 90%;
+      max-width: 1100px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .left {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .right {
+      flex: 1;
+      padding: 30px 40px;
+    }
+
+    .right h2 {
+      color: #4a6cf7;
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 40px 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .form-group .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #555;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background-color: #4a6cf7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #3b59c9;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    .footer a {
+      color: #da5e5e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left">
+      <img src="../Image/signup.jpg" alt="login image">
+    </div>
+    <div class="right">
+      <h2>សូមចុះឈ្មោះ</h2>
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="នាមត្រកូល និងនាមខ្លួន" required>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="អ៊ីមែល" required>
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="លេខទូរស័ព្ទ" required>
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" placeholder="ពាក្យសម្ងាត់" required>
+          <i class="fa-regular fa-eye toggle-password" onclick="togglePassword('password', this)"></i>
+        </div>
+        <div class="form-group">
+          <input type="password" id="confirm" placeholder="បញ្ជាក់ពាក្យសម្ងាត់" required>
+          <i class="fa-regular fa-eye toggle-password" onclick="togglePassword('confirm', this)"></i>
+        </div>
+        <button class="submit-btn" type="submit">បញ្ជាក់ការចុះឈ្មោះ</button>
+        <div class="footer">
+          មានគណនីរួចហើយ? <a href="#">ចូលប្រើគណនី</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(fieldId, icon) {
+      const field = document.getElementById(fieldId);
+      if (field.type === "password") {
+        field.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        field.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    }
+  </script>
+
+</body>
+</html>
